@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
+import Nav from './Nav'
 
 function About() {
   return (
     <div className="about">
+      <Nav />
       <div class="container">
         <div class="row text-center">
 
