@@ -1,4 +1,4 @@
-.home {
+.home-main {
   position: relative;
 }
 
@@ -10,7 +10,7 @@
   background-color: rgb(33, 37, 41);
 }
 
-.section {
+.home-content {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
   overflow: hidden;
 }
 
-.section-text {
+.background {
   text-align: center;
   z-index: 1;
   color: white;
@@ -60,15 +60,9 @@
 .video-container video {
   pointer-events: none;
 
-  /* Make video to at least 100% wide and tall */
   min-width: 100%; 
   min-height: 100%; 
 
-  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-  /* width: 100vw;
-  height: 100vh; */
-
-  /* Center the video */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -85,7 +79,7 @@
 }
 
 .box {
-  min-height: 800px;
+  min-height: 100vh;
   width: 100%;
   z-index: 2;
   background: white;
@@ -95,29 +89,45 @@
   text-align: center;
 }
 
-.about {
-  text-align: center;
+.about-main {
   background: #e8cbc0;
   background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
   background: linear-gradient(to right, #e8cbc0, #636fa4);
   min-height: 100vh;
 }
 
-.social-link {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  border-radius: 50%;
-  transition: all 0.3s;
-  font-size: 0.9rem;
+.about-content {
+  text-align: center;
+  width: 90vw;
+  margin: auto;
 }
 
-.social-link:hover, .social-link:focus {
-  background: #ddd;
-  text-decoration: none;
-  color: #555;
+.about-content a {
+  color: black;
+}
+
+.horizontal .picture {
+  width: 100%;
+  height: 200px;
+  background: rgba(128, 128, 128, 0.5);
+}
+
+.vertical .picture {
+  position: absolute;
+  float: left;
+  height: 100%;
+  width: 40%;
+  background: rgba(128, 128, 128, 0.5);
+}
+
+.vertical .desc {
+  float: right;
+  width: 60%;
+}
+
+.testing:after {
+  position: relative;
+  content: "";
+  display: table;
+  clear: both;
 }
