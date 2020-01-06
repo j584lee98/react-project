@@ -5,8 +5,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-function About() {
-  return (
+class About extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      height: 0,
+      width: 0
+    }
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        height: window.innerHeight,
+        width: document.body.offsetWidth,
+        offset: window.pageYOffset
+      });
+    }, 50);
+  }
+
+  render() {
+    return (
     <div className="about-main">
       <Nav />
       <div className="about-content">
@@ -21,7 +40,7 @@ function About() {
             </div>
           </div>
 
-          <div className="horizontal col-xl-3 col-sm-6 mb-5">
+          <div className="horizontal col-xl-3 col-md-6 mb-5">
             <div className="bg-white rounded shadow-sm">
               <div className="picture rounded-top"></div>
               <div className="p-4">
@@ -38,7 +57,7 @@ function About() {
             </div>
           </div>
 
-          <div className="horizontal col-xl-3 col-sm-6 mb-5">
+          <div className="horizontal col-xl-3 col-md-6 mb-5">
             <div className="bg-white rounded shadow-sm">
               <div className="picture rounded-top"></div>
               <div className="p-4">
@@ -55,7 +74,7 @@ function About() {
             </div>
           </div>
 
-          <div className="horizontal col-xl-3 col-sm-6 mb-5">
+          <div className="horizontal col-xl-3 col-md-6 mb-5">
             <div className="bg-white rounded shadow-sm">
               <div className="picture rounded-top"></div>
               <div className="p-4">
@@ -72,7 +91,7 @@ function About() {
             </div>
           </div>
 
-          <div className="horizontal col-xl-3 col-sm-6 mb-5">
+          <div className="horizontal col-xl-3 col-md-6 mb-5">
             <div className="bg-white rounded shadow-sm">
               <div className="picture rounded-top"></div>
               <div className="p-4">
@@ -89,7 +108,7 @@ function About() {
             </div>
           </div>
 
-          <div className="vertical col-xl-6 col-lg-6 mb-5">
+          <div className="vertical col-lg-6 mb-5">
             <div className="testing bg-white rounded shadow-sm">
               <div className="picture rounded-left"></div>
               <div className="desc p-4">
@@ -106,7 +125,7 @@ function About() {
             </div>
           </div>
 
-          <div className="vertical col-xl-6 col-lg-6 mb-5">
+          <div className="vertical col-lg-6 mb-5">
             <div className="testing bg-white rounded shadow-sm">
               <div className="picture rounded-left"></div>
               <div className="desc p-4">
@@ -123,7 +142,7 @@ function About() {
             </div>
           </div>
 
-          <div className="vertical col-xl-6 col-lg-6 mb-5">
+          <div className="vertical col-lg-6 mb-5">
             <div className="testing bg-white rounded shadow-sm">
               <div className="picture rounded-left"></div>
               <div className="desc p-4">
@@ -140,7 +159,7 @@ function About() {
             </div>
           </div>
 
-          <div className="vertical col-xl-6 col-lg-6 mb-5">
+          <div className="vertical col-lg-6 mb-5">
             <div className="testing bg-white rounded shadow-sm">
               <div className="picture rounded-left"></div>
               <div className="desc p-4">
@@ -157,7 +176,7 @@ function About() {
             </div>
           </div>
 
-          <div className="col-xl-3 col-sm-6 mb-5">
+          {/* <div className="col-xl-3 col-sm-6 mb-5">
             <div className="bg-white rounded shadow-sm py-5 px-4"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
               <h5 className="mb-0">Member Name</h5><span className="small text-uppercase text-muted">Profession</span>
               <ul className="social mb-0 list-inline mt-3">
@@ -203,12 +222,14 @@ function About() {
               </ul>
               <p>Suspendisse efficitur, eros ac congue faucibus, diam arcu eleifend quam, ac sagittis elit lorem eget leo. Nunc mollis ornare condimentum.</p>
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>
     </div>
   );
+  }
+  
 }
 
 export default About;
