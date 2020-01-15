@@ -4,6 +4,10 @@ import About from './About';
 import Nav from './Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Video from './static/night.mp4'
+import Image1 from './static/image1.jpg'
+import Image2 from './static/image2.jpg'
+import Image3 from './static/image3.jpg'
+import Image4 from './static/image4.jpg'
 import { Animated } from "react-animated-css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
@@ -20,6 +24,48 @@ function App() {
       </div>
     </Router>
   );
+}
+
+function isInView(element) {
+  let elementBox = element.getBoundingClientRect()
+  let distanceFromTop = 0
+
+  if (elementBox.top - window.innerHeight < distanceFromTop) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+
+function scanDocument() {
+  let sectionList = document.querySelectorAll('.top')
+  let leftList = document.querySelectorAll('.left')
+  let rightList = document.querySelectorAll('.right')
+  sectionList.forEach(function (section) {
+    if (isInView(section)) {
+      section.classList.add('show-top')
+    }
+    else {
+      section.classList.remove('show-top')
+    }
+  })
+  leftList.forEach(function (section) {
+    if (isInView(section)) {
+      section.classList.add('show-left')
+    }
+    else {
+      section.classList.remove('show-left')
+    }
+  })
+  rightList.forEach(function (section) {
+    if (isInView(section)) {
+      section.classList.add('show-right')
+    }
+    else {
+      section.classList.remove('show-right')
+    }
+  })
 }
 
 class Home extends React.Component {
@@ -39,6 +85,7 @@ class Home extends React.Component {
         offset: window.pageYOffset
       });
     }, 50);
+    document.addEventListener('scroll', scanDocument)
   }
 
   render() {
@@ -60,18 +107,34 @@ class Home extends React.Component {
               autoPlay
               loop
               muted
-              height={3840 / this.state.width > 2160 / this.state.height ? '100vh' : null}
-              width={3840 / this.state.width <= 2160 / this.state.height ? '100vw' : null}
+              height={2560 / this.state.width > 1440 / this.state.height ? '100vh' : null}
+              width={2560 / this.state.width <= 1440 / this.state.height ? '100vw' : null}
             >
               <source src={Video} type="video/mp4"></source>
             </video>
           </div>
         </div>
-        <div className="box" style={{
-          position: 'absolute',
-          top: (this.state.height + 100) + 'px',
-          left: 0,
-        }}><h1>Container</h1></div>
+        <div className="box first">
+          <div className="content">
+            <h4 className="top mb-4">Donec condimentum vitae ligula id consectetur.</h4>
+            <div className="images d-flex flex-wrap justify-content-around">
+              <img className="left mx-auto rounded" src={Image1} height="200px" width="200px"></img>
+              <img className="right mx-auto rounded" src={Image2} height="200px" width="200px"></img>
+            </div>
+          </div>
+        </div>
+        <div className="box second">
+          <div className="content">
+            <h4 className="top mb-4">Ut fermentum non ante sit amet tincidunt.</h4>
+            <div className="images d-flex flex-wrap justify-content-around">
+              <img className="left mx-auto rounded" src={Image3} height="200px" width="200px"></img>
+              <img className="right mx-auto rounded" src={Image4} height="200px" width="200px"></img>
+            </div>
+          </div>
+        </div>
+        <div className="footer">
+
+        </div>
       </div>
     );
   }

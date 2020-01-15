@@ -89,6 +89,74 @@
   text-align: center;
 }
 
+.box.first {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+}
+
+.box.second {
+  position: absolute;
+  top: 200vh;
+  left: 0;
+}
+
+.content {
+  max-width: 80vw;
+}
+
+@keyframes fadeInBottom {
+  0% {
+     opacity: 0;
+     transform: translateY(-100px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+     opacity: 0;
+     transform: translateY(100px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+     opacity: 0;
+     transform: translateY(100px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+
+.top, .left, .right {
+  opacity: 0;
+}
+
+.show-top {
+  opacity: 1;
+  animation: fadeInBottom 1s;
+}
+
+.show-left {
+  opacity: 1;
+  animation: fadeInLeft 1s;
+}
+
+.show-right {
+  opacity: 1;
+  animation: fadeInRight 1s;
+}
+
 .about-main {
   background: #e8cbc0;
   background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
@@ -136,18 +204,30 @@
   clear: both;
 }
 
+.footer {
+  position: absolute;
+  top: 300vh;
+  width: 100%;
+  min-height: 200px;
+  background-color: rgb(33, 37, 41);
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: #ddd;
   border-radius: 6px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background: #888; 
   border-radius: 6px;
 }
