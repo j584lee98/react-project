@@ -110,7 +110,7 @@ class Home extends React.Component {
               height={2560 / this.state.width > 1440 / this.state.height ? '100vh' : null}
               width={2560 / this.state.width <= 1440 / this.state.height ? '100vw' : null}
             >
-              <source src="https://vod-progressive.akamaized.net/exp=1579080588~acl=%2A%2F1594271631.mp4%2A~hmac=c4df95e0c985d2c31550109bc78927a0999872761716530313f843c2f417913a/vimeo-prod-skyfire-std-us/01/1094/15/380473720/1594271631.mp4" type="video/mp4"></source>
+              <source src={Video} type="video/mp4"></source>
             </video>
           </div>
         </div>
