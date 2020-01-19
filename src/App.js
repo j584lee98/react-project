@@ -40,30 +40,12 @@ function isInView(element) {
 
 function scanDocument() {
   let sectionList = document.querySelectorAll('.top')
-  let leftList = document.querySelectorAll('.left')
-  let rightList = document.querySelectorAll('.right')
   sectionList.forEach(function (section) {
     if (isInView(section)) {
-      section.classList.add('show-top')
+      section.classList.add('show')
     }
     else {
-      section.classList.remove('show-top')
-    }
-  })
-  leftList.forEach(function (section) {
-    if (isInView(section)) {
-      section.classList.add('show-left')
-    }
-    else {
-      section.classList.remove('show-left')
-    }
-  })
-  rightList.forEach(function (section) {
-    if (isInView(section)) {
-      section.classList.add('show-right')
-    }
-    else {
-      section.classList.remove('show-right')
+      section.classList.remove('show')
     }
   })
 }
@@ -115,25 +97,27 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="box first">
-          <div className="content">
-            <h4 className="top mb-4">Donec condimentum vitae ligula id consectetur.</h4>
+          <div className="content top">
+            <h4 className="mb-4">Donec condimentum vitae ligula id consectetur.</h4>
             <div className="images d-flex flex-wrap justify-content-around">
-              <img className="left mx-auto rounded" src={Image1} height="200px" width="200px"></img>
-              <img className="right mx-auto rounded" src={Image2} height="200px" width="200px"></img>
+              <img className="left mx-auto my-3 rounded" src={Image1} height="200px" width="200px"></img>
+              <img className="right mx-auto my-3 rounded" src={Image2} height="200px" width="200px"></img>
             </div>
           </div>
         </div>
         <div className="box second">
-          <div className="content">
-            <h4 className="top mb-4">Ut fermentum non ante sit amet tincidunt.</h4>
+          <div className="content top">
+            <h4 className="mb-4">Ut fermentum non ante sit amet tincidunt.</h4>
             <div className="images d-flex flex-wrap justify-content-around">
-              <img className="left mx-auto rounded" src={Image3} height="200px" width="200px"></img>
-              <img className="right mx-auto rounded" src={Image4} height="200px" width="200px"></img>
+              <img className="left mx-auto my-3 rounded" src={Image3} height="200px" width="200px"></img>
+              <img className="right mx-auto my-3 rounded" src={Image4} height="200px" width="200px"></img>
             </div>
           </div>
         </div>
-        <div className="footer">
-
+        <div className="footer" style={{
+          position: 'absolute',
+          top: '300vh'
+        }}>
         </div>
       </div>
     );
@@ -195,6 +179,11 @@ class Triangle extends React.Component {
           top: (this.state.height + 100) + 'px',
           left: 0,
         }}><h1>Container</h1></div>
+        <div className="footer" style={{
+          position: 'absolute',
+          top: '210vh'
+        }}>
+        </div>
       </div>
     );
   }
