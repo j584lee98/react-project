@@ -26,7 +26,7 @@ class Nav extends React.Component {
       // <div id="navbar" style={{backgroundColor: this.state.offset < this.state.height ? 'rgba(33, 37, 41, 0.2)' : 'rgb(33, 37, 41)'}}>
       <div id="navbar" style={{ backgroundColor: this.state.width >= 980 ? 'rgba(33, 37, 41, ' + (0.2 + (1 - 0.2) * (this.state.offset / this.state.height)) + ')' : 'rgba(33, 37, 41, 1)' }}>
         <nav className="navbar navbar-expand-lg navbar-dark">
-          <a className="navbar-brand" href="/">L3 Capital</a>
+          <a className="navbar-brand" href="/">Kader Capital Partners</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

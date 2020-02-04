@@ -42,10 +42,7 @@ function scanDocument() {
   let sectionList = document.querySelectorAll('.top')
   sectionList.forEach(function (section) {
     if (isInView(section)) {
-      section.classList.add('show')
-    }
-    else {
-      section.classList.remove('show')
+      section.classList.add('slide')
     }
   })
 }
